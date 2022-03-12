@@ -1,0 +1,21 @@
+expo init my-app
+
+yarn add @react-navigation/native-stack 
+
+yarn add @react-navigation/native
+
+yarn add react-native-screens react-native-safe-area-context
+
+yarn add @react-navigation/bottom-tabs
+
+expo install react-native-gesture-handler
+
+yarn add react-native-reanimated
+
+yarn add @react-native-community/masked-view
+
+yarn add expo-font
+
+yarn add react-native-stars react-native-swiper
+
+yarn add @expo-google-fonts/montserrat

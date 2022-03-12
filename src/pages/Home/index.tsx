@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import FeatherIcon from '../../components/FeatherIcons';
 import New from '../../components/New';
+import House from '../../components/House';
 
 
 export default function Home(){
@@ -34,7 +35,7 @@ export default function Home(){
             </View>
 
             {/* TODO: REPLACE TO FLATLIST AFTER IMPLEMENTATION OF API */}
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ backgroundColor: '#fff'}} >
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView}>
                 <New 
                     cover={require('../../assets/house1.jpg')}
                     name="Casa Floripa"
@@ -59,9 +60,15 @@ export default function Home(){
                     onPress={handleDetails} 
                 />
                                 
-
             </ScrollView>
 
+            <View style={[styles.contentNew, { marginBottom: 10, marginTop: 20 }]}>
+                <Text style={styles.title}>Próximo de você</Text>
+            </View>
+
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >
+                <House />
+            </ScrollView>
 
         </ScrollView>
     );

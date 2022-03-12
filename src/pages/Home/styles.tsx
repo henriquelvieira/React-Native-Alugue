@@ -41,6 +41,9 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat_700Bold',
         fontSize: 18,
         color: '#4f4a4a'
+    },
+    scrollView: {
+        paddingHorizontal: 15,
     }
 });
 

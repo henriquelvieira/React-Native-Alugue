@@ -19,3 +19,12 @@ yarn add expo-font
 yarn add react-native-stars react-native-swiper
 
 yarn add @expo-google-fonts/montserrat
+
+
+echo "# React-Native-Alugue" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/henriquelvieira/React-Native-Alugue.git
+git push -u origin main

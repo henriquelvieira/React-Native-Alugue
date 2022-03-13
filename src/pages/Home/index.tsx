@@ -71,18 +71,22 @@ export default function Home(){
                     cover={require('../../assets/house4.jpg')}
                     description="Casa para você morar, casa show de bola!"
                     price="R$ 954,60"
+                    onPress={handleDetails} 
                 />
 
                 <House 
                     cover={require('../../assets/house5.jpg')}
                     description="Casa para você morar, casa show de bola!"
                     price="R$ 954,60"
+                    onPress={handleDetails} 
                 />
+
 
                 <House 
                     cover={require('../../assets/house6.jpg')}
                     description="Casa para você morar, casa show de bola!"
                     price="R$ 954,60"
+                    onPress={handleDetails} 
                 />
             </ScrollView>
 

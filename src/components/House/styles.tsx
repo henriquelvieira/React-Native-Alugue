@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         elevation: 2,
         padding: 6,
         marginVertical: 5,
-        marginRight: 20,
+        marginRight: 15,
         marginLeft: 2,
         borderRadius: 10
     },
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat_500Medium',
     },
     price: {
-        fontSize: 12,
+        fontSize: 15,
         fontFamily: 'Montserrat_700Bold',
 
     },

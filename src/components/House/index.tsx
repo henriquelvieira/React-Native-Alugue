@@ -3,16 +3,26 @@ import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
 
+export interface IHouse {
+    cover: string;  
+    description?: string;
+    price?: string;
+    onPress: () => void;
+}
 
-export default function House (props) {
+
+export default function House (props: IHouse) {
     return (
-        <View style={styles.container}>
-            <View>
-                <Image 
-                    source={props.cover}
-                    style={styles.cover}
-                />
-            </View>
+        <TouchableOpacity
+            onPress={props.onPress}
+            style={styles.container}
+        >
+
+            <Image 
+                source={props.cover}
+                style={styles.cover}
+            />
+
 
             <View style={styles.content}>
                 <Text style={styles.description}>{props?.description}</Text>
@@ -21,6 +31,6 @@ export default function House (props) {
 
 
 
-        </View>
+        </TouchableOpacity>
     )
 };

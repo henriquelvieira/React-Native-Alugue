@@ -1,11 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-// import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View, Text, Image, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
 
+export interface INew {
+    cover: string;
+    name: string;
+    description: string;
+    price: string;
+    onPress: () => {};
+};
 
-export default function New (props) {
+export default function New (props: INew) {
     return (
         <TouchableOpacity
             onPress={props.onPress}
@@ -23,7 +29,7 @@ export default function New (props) {
 
             <View style={styles.footer}>
                 <View style={{width: '80%'}}>
-                    <Text style={styles.price}>R$ {props.price}</Text>
+                    <Text style={styles.price}>{props.price}</Text>
                 </View>
                 <View style={{width: '20%'}}>
                     <Ionicons name="ios-add-circle" size={24} color="black" />

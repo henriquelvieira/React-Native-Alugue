@@ -1,32 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import { Feather } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native';
 
 import Home from './pages/Home';
 import Details from './pages/Details';
 
-import FeatherIcon from './components/FeatherIcons';
+import ButtonHeader from './components/ButtonHeader';
+
 
 const Stack = createNativeStackNavigator();
 
 function Routes(){
 
-    const ButtonHeader = (name: string, size?: number | undefined, color?: string | undefined) => {
-        return (
-            <TouchableOpacity style={{ marginRight: 15 }}>
-              <FeatherIcon
-                name={name}
-                size={size}
-                color={color}
-              />
-            </TouchableOpacity>
-        );
-    };
-
-
-    const optinsHeader = (title: string, align: string, buttonHeader: any ) => {
+    const optinsHeader = (title: string, align: string, buttonHeader?: any ) => {
         return {
             title: title,
             headerTitleAlign: align,
@@ -39,7 +25,7 @@ function Routes(){
                 backgroundColor: '#fff'
             },
             headerTintColor: '#000',
-            headerRight: () => buttonHeader 
+            headerRight: buttonHeader && (() => buttonHeader)
         }
     }
 
@@ -50,14 +36,14 @@ function Routes(){
                     name="Home" 
                     component={Home} 
                     options={
-                        optinsHeader('Home', 'right', ButtonHeader('shopping-bag') )
+                        optinsHeader('Home', 'right', <ButtonHeader name='shopping-bag' /> )
                     } 
                 />
                 <Stack.Screen 
                     name="Details" 
                     component={Details} 
                     options={
-                        optinsHeader('Detalhes', 'right', ButtonHeader('shopping-bag') )
+                        optinsHeader('Detalhes', 'right', <ButtonHeader name='shopping-bag' />  )
                     } 
                 />
             </Stack.Navigator>

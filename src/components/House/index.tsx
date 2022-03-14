@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
 export interface IHouse {

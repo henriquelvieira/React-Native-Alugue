@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { ScrollView, TextInput } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
@@ -100,16 +100,19 @@ export default function Home(){
                     cover={require('../../assets/house1.jpg')}
                     house="Casa Floripa"
                     offer="25% OFF"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})}
                 />
                 <Recommended
                     cover={require('../../assets/house2.jpg')}
                     house="Casa São Paulo"
                     offer="15% OFF"
+                    onPress={() => handleNavigation('Details', { name: 'Casa São Paulo'})}
                 />
                 <Recommended
                     cover={require('../../assets/house3.jpg')}
                     house="Casa de Praia"
                     offer="10% OFF"
+                    onPress={() => handleNavigation('Details', { name: 'Casa de Praia'})}
                 />                                
             </ScrollView>
 

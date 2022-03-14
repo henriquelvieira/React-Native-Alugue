@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, FlatList } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,10 +9,13 @@ import House from '../../components/House';
 import SearchBox from '../../components/SearchBox';
 import Recommended from '../../components/Recommended';
 
+import { DataNews } from './data';
+
 
 export interface IParamsNavigation {
     name: string;
 };
+
 
 export default function Home(){
 
@@ -21,6 +24,19 @@ export default function Home(){
     function handleNavigation(screenName: string, params?: IParamsNavigation): void {
         navigation.navigate(screenName, params);
     };
+
+    function renderNewList({ dataNew }) {
+        return (
+            <New 
+                cover={require(`../../assets/${dataNew.cover}`)}
+                name={dataNew.name}
+                description={dataNew.description}
+                price={dataNew.price}
+                onPress={() => {}} 
+            />
+        )
+    };
+
 
     return (
         <ScrollView
@@ -38,6 +54,13 @@ export default function Home(){
 
             {/* TODO: REPLACE TO FLATLIST AFTER IMPLEMENTATION OF API */}
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView}>
+                
+                {/* <FlatList
+                    data={DataNews}
+                    renderItem={renderNewList}
+                    keyExtractor={dataNew => dataNew.id}
+                /> */}
+
                 <New 
                     cover={require('../../assets/house1.jpg')}
                     name="Casa Floripa"

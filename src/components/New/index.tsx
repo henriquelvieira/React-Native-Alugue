@@ -14,8 +14,8 @@ export interface INew {
 export default function New (props: INew) {
     return (
         <TouchableOpacity
-            onPress={props.onPress}
             style={styles.container}
+            onPress={props.onPress}
         >
             <Image source={props.cover} style={styles.cover} />
 

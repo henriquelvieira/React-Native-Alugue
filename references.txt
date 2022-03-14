@@ -20,6 +20,9 @@ yarn add react-native-stars react-native-swiper
 
 yarn add @expo-google-fonts/montserrat
 
+yarn add react-native-swiper
+
+yarn add react-native-stars
 
 echo "# React-Native-Alugue" >> README.md
 git init

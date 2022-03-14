@@ -1,21 +1,26 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { ScrollView, TextInput } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
-import FeatherIcon from '../../components/FeatherIcons';
 import New from '../../components/New';
 import House from '../../components/House';
+import SearchBox from '../../components/SearchBox';
+import Recommended from '../../components/Recommended';
 
+
+export interface IParamsNavigation {
+    name: string;
+};
 
 export default function Home(){
 
     const navigation = useNavigation();
 
-    function handleDetails() {
-        navigation.navigate('Details');
-    }
+    function handleNavigation(screenName: string, params?: IParamsNavigation): void {
+        navigation.navigate(screenName, params);
+    };
 
     return (
         <ScrollView
@@ -24,10 +29,7 @@ export default function Home(){
         >
 
             <View style={styles.header}>
-                <View style={styles.inputArea} >
-                    <FeatherIcon name="search" />
-                    <TextInput placeholder="O que está procurando?" style={styles.input} />
-                </View>
+                <SearchBox placeholder="O que está procurando??"/>
             </View>
 
             <View style={styles.contentNew}>
@@ -40,24 +42,24 @@ export default function Home(){
                     cover={require('../../assets/house1.jpg')}
                     name="Casa Floripa"
                     description="Casa nova uma quadra do mar, lugar seguro e monitorado 24horas."
-                    price="1.204,90"
-                    onPress={handleDetails} 
+                    price="R$ 1.204,90"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
                 />
 
                 <New
                     cover={require('../../assets/house2.jpg')} 
                     name="Casa Floripa"
                     description="Casa nova uma quadra do mar, lugar seguro e monitorado 24horas."
-                    price="1.204,90"
-                    onPress={handleDetails} 
+                    price="R$ 1.204,90"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
                 />
 
                 <New
                     cover={require('../../assets/house3.jpg')}
                     name="Rancho SP"
                     description="Casa nova uma quadra do mar, lugar seguro e monitorado 24horas."
-                    price="1.204,90"
-                    onPress={handleDetails} 
+                    price="R$ 1.204,90"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
                 />
                                 
             </ScrollView>
@@ -67,7 +69,51 @@ export default function Home(){
             </View>
 
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >
-                <House />
+                <House 
+                    cover={require('../../assets/house4.jpg')}
+                    description="Casa para você morar, casa show de bola!"
+                    price="R$ 954,60"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
+                />
+
+                <House 
+                    cover={require('../../assets/house5.jpg')}
+                    description="Casa para você morar, casa show de bola!"
+                    price="R$ 954,60"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
+                />
+
+                <House 
+                    cover={require('../../assets/house6.jpg')}
+                    description="Casa para você morar, casa show de bola!"
+                    price="R$ 954,60"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
+                />
+            </ScrollView>
+
+            <View style={[styles.contentNew, { marginBottom: 10, marginTop: 20 }]}>
+                <Text style={styles.title}>Dica do Dia</Text>
+            </View>
+
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >
+                <Recommended
+                    cover={require('../../assets/house1.jpg')}
+                    house="Casa Floripa"
+                    offer="25% OFF"
+                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})}
+                />
+                <Recommended
+                    cover={require('../../assets/house2.jpg')}
+                    house="Casa São Paulo"
+                    offer="15% OFF"
+                    onPress={() => handleNavigation('Details', { name: 'Casa São Paulo'})}
+                />
+                <Recommended
+                    cover={require('../../assets/house3.jpg')}
+                    house="Casa de Praia"
+                    offer="10% OFF"
+                    onPress={() => handleNavigation('Details', { name: 'Casa de Praia'})}
+                />                                
             </ScrollView>
 
         </ScrollView>

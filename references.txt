@@ -29,6 +29,8 @@ yarn add axios
 
 yarn add @types/axios
 
+https://stackoverflow.com/questions/51415892/import-swiper-show-error-by-using-react-native-swiper
+
 echo "# React-Native-Alugue" >> README.md
 git init
 git add README.md

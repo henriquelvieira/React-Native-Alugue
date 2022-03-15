@@ -44,7 +44,7 @@ export default function Home(){
         /> 
       ); 
       
-      const renderRecommended = ( { item }) => (
+      const renderRecommendeds = ( { item }) => (
         <Recommended
             cover={require(`../../assets/${item.cover}`)}
             name={item.name}
@@ -68,7 +68,11 @@ export default function Home(){
                 <Text style={styles.title}>Novidades</Text>
             </View>
 
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView}>            
+            <ScrollView 
+                horizontal 
+                showsHorizontalScrollIndicator={false} 
+                style={styles.scrollView}
+            >            
                 <FlatList
                     horizontal
                     data={DataNews}
@@ -81,7 +85,11 @@ export default function Home(){
                 <Text style={styles.title}>Próximo de você</Text>
             </View>
 
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >
+            <ScrollView 
+                horizontal 
+                showsHorizontalScrollIndicator={false} 
+                style={styles.scrollView} 
+            >
                 <FlatList
                     horizontal
                     data={DataHouses}
@@ -94,11 +102,15 @@ export default function Home(){
                 <Text style={styles.title}>Dica do Dia</Text>
             </View>
 
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >            
+            <ScrollView 
+                horizontal 
+                showsHorizontalScrollIndicator={false} 
+                style={styles.scrollView} 
+            >            
                 <FlatList
                     horizontal
                     data={DataRecommended}
-                    renderItem={renderRecommended}
+                    renderItem={renderRecommendeds}
                     keyExtractor={dataNew => dataNew.id}
                 />                                        
             </ScrollView>

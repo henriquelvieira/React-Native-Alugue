@@ -8,7 +8,7 @@ export interface INew {
     name: string;
     description: string;
     price: string;
-    onPress: () => {};
+    onPress: () => void;
 };
 
 export default function New (props: INew) {

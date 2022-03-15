@@ -6,7 +6,7 @@ export interface IRecommended {
     cover: string;
     name: string;
     offer: string;
-    onPress: () => {};
+    onPress: () => void;
 };
 
 export default function Recommended (props: IRecommended) {

@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
         marginBottom: 40,
         marginLeft: 3,
         opacity: .8,
-        backgroundColor: '#000',
-        padding: 12
+        padding: 12,
+        backgroundColor: '#000'
     },
     house: {
         fontFamily: 'Montserrat_700Bold',

@@ -9,7 +9,7 @@ import House from '../../components/House';
 import SearchBox from '../../components/SearchBox';
 import Recommended from '../../components/Recommended';
 
-import { DataNews } from './data';
+import { DataNews, DataHouses, DataRecommended } from './data';
 
 
 export interface IParamsNavigation {
@@ -25,18 +25,34 @@ export default function Home(){
         navigation.navigate(screenName, params);
     };
 
-    // function renderNewList({ dataNew }) {
-    //     return (
-    //         <New 
-    //             cover={require(`../../assets/${dataNew.cover}`)}
-    //             name={dataNew.name}
-    //             description={dataNew.description}
-    //             price={dataNew.price}
-    //             onPress={() => {}} 
-    //         />
-    //     )
-    // };
+    const renderNews = ({ item }) => (
+        <New 
+            cover={require(`../../assets/${item.cover}`)}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+            onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
+        />      
+      );
 
+      const renderHouses = ({ item }) => (
+        <House 
+            cover={require(`../../assets/${item.cover}`)}
+            description={item.description}
+            price={item.price}
+            onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
+        /> 
+      ); 
+      
+      const renderRecommended = ( { item }) => (
+        <Recommended
+            cover={require(`../../assets/${item.cover}`)}
+            name={item.name}
+            offer={item.offer}
+            onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})}
+        />  
+      );
+    
 
     return (
         <ScrollView
@@ -52,39 +68,13 @@ export default function Home(){
                 <Text style={styles.title}>Novidades</Text>
             </View>
 
-            {/* TODO: REPLACE TO FLATLIST AFTER IMPLEMENTATION OF API */}
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView}>
-                
-                {/* <FlatList
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView}>            
+                <FlatList
+                    horizontal
                     data={DataNews}
-                    renderItem={renderNewList}
+                    renderItem={renderNews}
                     keyExtractor={dataNew => dataNew.id}
-                /> */}
-
-                <New 
-                    cover={require('../../assets/house1.jpg')}
-                    name="Casa Floripa"
-                    description="Casa nova uma quadra do mar, lugar seguro e monitorado 24horas."
-                    price="R$ 1.204,90"
-                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
-                />
-
-                <New
-                    cover={require('../../assets/house2.jpg')} 
-                    name="Casa Floripa"
-                    description="Casa nova uma quadra do mar, lugar seguro e monitorado 24horas."
-                    price="R$ 1.204,90"
-                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
-                />
-
-                <New
-                    cover={require('../../assets/house3.jpg')}
-                    name="Rancho SP"
-                    description="Casa nova uma quadra do mar, lugar seguro e monitorado 24horas."
-                    price="R$ 1.204,90"
-                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
-                />
-                                
+                />                                                
             </ScrollView>
 
             <View style={[styles.contentNew, { marginBottom: 10, marginTop: 20 }]}>
@@ -92,51 +82,25 @@ export default function Home(){
             </View>
 
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >
-                <House 
-                    cover={require('../../assets/house4.jpg')}
-                    description="Casa para você morar, casa show de bola!"
-                    price="R$ 954,60"
-                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
-                />
-
-                <House 
-                    cover={require('../../assets/house5.jpg')}
-                    description="Casa para você morar, casa show de bola!"
-                    price="R$ 954,60"
-                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
-                />
-
-                <House 
-                    cover={require('../../assets/house6.jpg')}
-                    description="Casa para você morar, casa show de bola!"
-                    price="R$ 954,60"
-                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
-                />
+                <FlatList
+                    horizontal
+                    data={DataHouses}
+                    renderItem={renderHouses}
+                    keyExtractor={dataNew => dataNew.id}
+                />  
             </ScrollView>
 
             <View style={[styles.contentNew, { marginBottom: 10, marginTop: 20 }]}>
                 <Text style={styles.title}>Dica do Dia</Text>
             </View>
 
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >
-                <Recommended
-                    cover={require('../../assets/house1.jpg')}
-                    house="Casa Floripa"
-                    offer="25% OFF"
-                    onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})}
-                />
-                <Recommended
-                    cover={require('../../assets/house2.jpg')}
-                    house="Casa São Paulo"
-                    offer="15% OFF"
-                    onPress={() => handleNavigation('Details', { name: 'Casa São Paulo'})}
-                />
-                <Recommended
-                    cover={require('../../assets/house3.jpg')}
-                    house="Casa de Praia"
-                    offer="10% OFF"
-                    onPress={() => handleNavigation('Details', { name: 'Casa de Praia'})}
-                />                                
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView} >            
+                <FlatList
+                    horizontal
+                    data={DataRecommended}
+                    renderItem={renderRecommended}
+                    keyExtractor={dataNew => dataNew.id}
+                />                                        
             </ScrollView>
 
         </ScrollView>

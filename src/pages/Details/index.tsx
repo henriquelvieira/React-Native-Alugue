@@ -2,9 +2,9 @@ import React from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Feather, Ionicons } from '@expo/vector-icons';
+import Stars from "react-native-stars";
 
 import SwiperComponent from "../../components/SwiperComponent";
-import Stars from 'react-native-stars';
 
 import styles from './styles';
 
@@ -16,7 +16,7 @@ export default function Details({ route, navigation }){
     return (
         <View style={styles.container}> 
             <View style={styles.swiperContent}> 
-                {/* <SwiperComponent /> */}
+                <SwiperComponent />
             </View>
 
             <View style={styles.headerContent}> 

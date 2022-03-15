@@ -9,13 +9,25 @@ export default function SwiperComponent () {
         <Swiper
             style={styles.wrapper}
             dotStyle={[styles.dot, { backgroundColor: '#000' }] }
-            activeDotColor='#FFF'
-            activeDotStyle={styles.dot}
-            autoplay
+            activeDotColor="#FFF"
+            activeDotStyle={[styles.dot, { backgroundColor: '#FFF' }] }
+            // autoplay
         >
             <View style={styles.slide}>
                 <Image 
                     source={require('../../assets/house1.jpg')}
+                    style={styles.imageSlide}
+                />
+            </View>
+            <View style={styles.slide}>
+                <Image 
+                    source={require('../../assets/house2.jpg')}
+                    style={styles.imageSlide}
+                />
+            </View>
+            <View style={styles.slide}>
+                <Image 
+                    source={require('../../assets/house3.jpg')}
                     style={styles.imageSlide}
                 />
             </View>

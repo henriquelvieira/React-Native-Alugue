@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
     star: {
         color: "#E7A74e",
         backgroundColor: 'transparent',
-        textShadow: "#000",
-        textShadowOffset: {width: 1, height: 1},
-        textShadowRadius: 1,
+        // textShadowColor: "#000",
+        // textShadowOffset: {width: .5, height: 1},
+        // textShadowRadius: 1,
     },
     house: {
         fontFamily: 'Montserrat_700Bold',

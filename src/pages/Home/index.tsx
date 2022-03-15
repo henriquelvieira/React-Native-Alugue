@@ -25,17 +25,17 @@ export default function Home(){
         navigation.navigate(screenName, params);
     };
 
-    function renderNewList({ dataNew }) {
-        return (
-            <New 
-                cover={require(`../../assets/${dataNew.cover}`)}
-                name={dataNew.name}
-                description={dataNew.description}
-                price={dataNew.price}
-                onPress={() => {}} 
-            />
-        )
-    };
+    // function renderNewList({ dataNew }) {
+    //     return (
+    //         <New 
+    //             cover={require(`../../assets/${dataNew.cover}`)}
+    //             name={dataNew.name}
+    //             description={dataNew.description}
+    //             price={dataNew.price}
+    //             onPress={() => {}} 
+    //         />
+    //     )
+    // };
 
 
     return (

@@ -4,9 +4,9 @@ import styles from './styles';
 
 export interface IRecommended {
     cover: string;
-    house: string;
+    name: string;
     offer: string;
-    onPress: () => {};
+    onPress: () => void;
 };
 
 export default function Recommended (props: IRecommended) {
@@ -19,7 +19,7 @@ export default function Recommended (props: IRecommended) {
                 style={styles.container}
                 blurRadius={2}
             >
-                <Text style={[styles.house, styles.shadow]}>{props.house}</Text>
+                <Text style={[styles.house, styles.shadow]}>{props.name}</Text>
                 <Text style={[styles.description, styles.shadow]}>{props.offer}</Text>
             </ImageBackground>
         </TouchableOpacity>

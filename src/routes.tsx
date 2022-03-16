@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './pages/Home';
 import Details from './pages/Details';
-
 import ButtonHeader from './components/ButtonHeader';
 
 

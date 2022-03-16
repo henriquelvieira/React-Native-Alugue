@@ -61,7 +61,7 @@ export default function Home(){
         >
 
             <View style={styles.header}>
-                <SearchBox placeholder="O que está procurando??"/>
+                <SearchBox placeholder="O que está procurando?"/>
             </View>
 
             <View style={styles.contentNew}>

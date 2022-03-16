@@ -44,3 +44,6 @@ https://styled-components.com/docs/basics
 https://medium.com/swlh/interacting-with-restful-apis-using-typescript-react-hooks-and-axios-part-1-af52920ae3e4
 
 https://br.atsit.in/archives/29499
+
+
+https://www.npmjs.com/package/react-native-swiper-flatlist

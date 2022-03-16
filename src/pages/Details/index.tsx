@@ -1,13 +1,13 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
+import { Text, View, Image, FlatList } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { Feather, Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import Stars from "react-native-stars";
-
 import SwiperComponent from "../../components/SwiperComponent";
 
 import styles from './styles';
 
+//TODO: Replaces SwiperComponent for yarn add react-native-swiper-flatlist
 
 export default function Details({ route, navigation }){
     
@@ -25,7 +25,9 @@ export default function Details({ route, navigation }){
     return (
         <View style={styles.container}> 
             <View style={styles.swiperContent}> 
-                <SwiperComponent />
+                <SwiperComponent 
+                    swipers={params.images}
+                />
             </View>
 
             <View style={styles.headerContent}> 

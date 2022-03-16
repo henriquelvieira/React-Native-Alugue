@@ -27,7 +27,7 @@ export default function Home(){
 
     const renderNews = ({ item }) => (
         <New 
-            cover={require(`../../assets/${item.cover}`)}
+            cover={item.cover}
             name={item.name}
             description={item.description}
             price={item.price}
@@ -37,7 +37,7 @@ export default function Home(){
 
       const renderHouses = ({ item }) => (
         <House 
-            cover={require(`../../assets/${item.cover}`)}
+            cover={item.cover}
             description={item.description}
             price={item.price}
             onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
@@ -46,7 +46,7 @@ export default function Home(){
       
       const renderRecommendeds = ( { item }) => (
         <Recommended
-            cover={require(`../../assets/${item.cover}`)}
+            cover={item.cover}
             name={item.name}
             offer={item.offer}
             onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})}

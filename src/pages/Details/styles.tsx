@@ -34,16 +34,26 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: "#4f4a4a",
     },
+    displayPrice: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start'
+    },
     price: {
         fontFamily: 'Montserrat_700Bold',
-        fontSize: 16,
+        fontSize: 14,
         paddingHorizontal: 20,
         color: '#000'
+    },
+    offer: {
+        fontFamily: 'Montserrat_700Bold',
+        fontSize: 16,
+        paddingHorizontal: 5,
+        color: 'red'
     },
     description: {
         fontFamily: 'Montserrat_500Medium',
         fontSize: 14,
-        color: '#b3aeae',
+        color: '#4f4a4a',
         paddingHorizontal: 20,
         lineHeight: 20,
         marginTop: 20,

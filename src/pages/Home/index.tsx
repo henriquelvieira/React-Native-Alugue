@@ -21,7 +21,7 @@ export default function Home(){
 
     const navigation = useNavigation();
 
-    function handleNavigation(screenName: string, params?: IParamsNavigation): void {
+    function handleNavigation(screenName: string, params?: any): void {
         navigation.navigate(screenName, params);
     };
 
@@ -31,7 +31,7 @@ export default function Home(){
             name={item.name}
             description={item.description}
             price={item.price}
-            onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
+            onPress={() => handleNavigation('Details', item)} 
         />      
       );
 
@@ -40,7 +40,7 @@ export default function Home(){
             cover={item.cover}
             description={item.description}
             price={item.price}
-            onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})} 
+            onPress={() => handleNavigation('Details', item)} 
         /> 
       ); 
       
@@ -49,7 +49,7 @@ export default function Home(){
             cover={item.cover}
             name={item.name}
             offer={item.offer}
-            onPress={() => handleNavigation('Details', { name: 'Casa Floripa'})}
+            onPress={() => handleNavigation('Details', item)}
         />  
       );
     

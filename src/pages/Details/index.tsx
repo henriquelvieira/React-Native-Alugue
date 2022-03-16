@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image } from "react-native";
+import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Feather, Ionicons } from '@expo/vector-icons';
 import Stars from "react-native-stars";
@@ -11,7 +11,16 @@ import styles from './styles';
 
 export default function Details({ route, navigation }){
     
-    const { name } = route.params;
+    const params = route.params; //Paramentros enviados pela Home
+
+    const renderImages = ({ item }) => (
+        <View style={styles.slide}>
+            <Image 
+                source={item.cover}
+                style={styles.slideImage}
+            />
+        </View>  
+      );
 
     return (
         <View style={styles.container}> 
@@ -21,14 +30,14 @@ export default function Details({ route, navigation }){
 
             <View style={styles.headerContent}> 
                 <View style={{ width: '65%' }}>
-                    <Text style={styles.house}>{name}</Text>
+                    <Text style={styles.house}>{params.name}</Text>
                 </View>
 
                 <View style={{ width: '35%' }}>
                     <Text style={styles.rating}>Avaliações</Text>   
                     <View style={{ alignItems: 'center', flexDirection: 'row'  }} >
                         <Stars 
-                            default={4}
+                            default={params.rating ? params.rating : 4}
                             count={5}
                             half={true}
                             starSize={20}
@@ -41,35 +50,26 @@ export default function Details({ route, navigation }){
 
             </View>
 
-            <Text style={styles.price}>R$ 1.200,20</Text>
-            <Text style={styles.description}>Casa nova uma quadra do mar, lugar seguro e monitorado 24horas.</Text>
+            <View style={styles.displayPrice}>
+                <Text style={styles.price}>{params.price}</Text>
+                {params.offer && (<Text style={styles.offer}>{params.offer}</Text>)}
+            </View>
+
+            <View>
+                <Text style={styles.description}>{params.description}</Text>
+            </View>
 
             <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 style={{paddingHorizontal: 15, marginTop: 35 }}
             >
-                <View style={styles.slide}>
-                    <Image 
-                        source={require('../../assets/house1.jpg')}
-                        style={styles.slideImage}
-                    />
-                </View>
-
-                <View style={styles.slide}>
-                    <Image 
-                        source={require('../../assets/house2.jpg')}
-                        style={styles.slideImage}
-                    />
-                </View>
-
-                <View style={styles.slide}>
-                    <Image 
-                        source={require('../../assets/house3.jpg')}
-                        style={styles.slideImage}
-                    />
-                </View>                                
-
+                <FlatList
+                    horizontal
+                    data={params.images}
+                    renderItem={renderImages}
+                    keyExtractor={dataNew => dataNew.id}
+                />                     
             </ScrollView>
 
         </View>

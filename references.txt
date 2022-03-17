@@ -29,7 +29,7 @@ yarn add axios
 
 yarn add @types/axios
 
-https://stackoverflow.com/questions/51415892/import-swiper-show-error-by-using-react-native-swiper
+
 
 echo "# React-Native-Alugue" >> README.md
 git init
@@ -45,5 +45,11 @@ https://medium.com/swlh/interacting-with-restful-apis-using-typescript-react-hoo
 
 https://br.atsit.in/archives/29499
 
+https://stackoverflow.com/questions/51415892/import-swiper-show-error-by-using-react-native-swiper
+https://www.reactnative.guide/8-styling/8.1-theme-variables.html
 
 https://www.npmjs.com/package/react-native-swiper-flatlist
+
+https://stackoverflow.com/questions/67623952/error-virtualizedlists-should-never-be-nested-inside-plain-scrollviews-with-th
+
+https://github.com/hossein-zare/react-native-dropdown-picker/issues/56

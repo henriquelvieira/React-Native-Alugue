@@ -31,6 +31,7 @@
     "react-native-screens": "^3.13.1",
     "react-native-stars": "^1.2.2",
     "react-native-swiper": "^1.6.0",
+    "react-native-swiper-flatlist": "^3.0.16",
     "react-native-web": "0.17.1",
     "styled-components": "^5.3.3"
   },

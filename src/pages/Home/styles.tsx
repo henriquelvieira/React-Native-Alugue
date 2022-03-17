@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+import { theme } from '../../global/styles/theme';
+
 
 const styles = StyleSheet.create({
     container: {
@@ -9,7 +11,7 @@ const styles = StyleSheet.create({
     },
     header:{
         flexDirection: 'row',
-        paddingHorizontal: 15,
+        paddingHorizontal: theme.PADDING_HORIZONTAL,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
@@ -21,13 +23,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     title: {
-        paddingHorizontal: 15,
-        fontFamily: 'Montserrat_700Bold',
-        fontSize: 18,
+        paddingHorizontal: theme.PADDING_HORIZONTAL,
+        fontFamily: theme.FONT_BOLD,
+        fontSize: theme.FONT_SIZE_LARGE,
         color: '#4f4a4a'
     },
     scrollView: {
-        paddingHorizontal: 15
+        paddingHorizontal: theme.PADDING_HORIZONTAL
     }
 });
 

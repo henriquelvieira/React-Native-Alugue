@@ -53,12 +53,12 @@ export default function Details({ route, navigation }){
             </View>
 
             <View style={styles.displayPrice}>
-                <Text style={styles.price}>{params.price}</Text>
-                {params.offer && (<Text style={styles.offer}>{params.offer}</Text>)}
+                <Text style={styles.price}>{params?.price}</Text>
+                <Text style={styles.offer}>{params?.offer}</Text>
             </View>
 
             <View>
-                <Text style={styles.description}>{params.description}</Text>
+                <Text style={styles.description}>{params?.description}</Text>
             </View>
 
             <ScrollView

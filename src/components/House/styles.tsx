@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
+import { theme } from '../../global/styles/theme';
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         width: 260,
         height: 70,
-        backgroundColor: '#fff',
+        backgroundColor: theme.BACKGROUND_COLOR_PRIMARY,
         elevation: 2,
         padding: 6,
         marginVertical: 5,
@@ -26,13 +27,12 @@ const styles = StyleSheet.create({
 
     },
     description: {
-        fontSize: 9,
-        fontFamily: 'Montserrat_500Medium',
+        fontSize: theme.FONT_SIZE_SMALL,
+        fontFamily: theme.FONT_FAMILY_MEDIUM,
     },
     price: {
-        fontSize: 15,
-        fontFamily: 'Montserrat_700Bold',
-
+        fontSize: theme.FONT_SIZE_MEDIUM,
+        fontFamily: theme.FONT_FAMILY_BOLD
     },
 });
 

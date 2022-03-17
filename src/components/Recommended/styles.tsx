@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { theme } from '../../global/styles/theme';
 
 const styles = StyleSheet.create({
     container: {
@@ -12,13 +13,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#000'
     },
     house: {
-        fontFamily: 'Montserrat_700Bold',
-        fontSize: 15,
+        fontFamily: theme.FONT_FAMILY_BOLD,
+        fontSize: theme.FONT_SIZE_MEDIUM,
         color: '#FFF',
     },
     description: {
-        fontSize: 12,
-        fontFamily: 'Montserrat_700Bold',
+        fontSize: theme.FONT_SIZE_REGULAR,
+        fontFamily: theme.FONT_FAMILY_BOLD,
         color: '#FFF',
     },
     shadow: {

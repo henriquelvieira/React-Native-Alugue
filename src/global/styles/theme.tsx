@@ -1,14 +1,18 @@
 export const theme = {
-    FONT_SIZE_SMALL: 12,
+    FONT_SIZE_SMALL: 9,
+    FONT_SIZE_REGULAR: 12,
     FONT_SIZE_MEDIUM: 14,
     FONT_SIZE_LARGE: 18,
-    PRIMARY_COLOR: 'rgb(30, 147, 242)',
-    SECONDARY_COLOR: 'rgb(238, 167, 2)',
-    FONT_WEIGHT_LIGHT: 200,
-    FONT_WEIGHT_MEDIUM: 600,
-    FONT_WEIGHT_HEAVY: 800,
-    FONT_BOLD: 'Montserrat_700Bold',
-    PADDING_HORIZONTAL: 15
-  };
 
-  
+    FONT_FAMILY_BOLD: 'Montserrat_700Bold',
+    FONT_FAMILY_MEDIUM : 'Montserrat_500Medium',
+    FONT_FAMILY_REGULAR : 'Montserrat_400Regular',
+    
+    FONT_COLOR_PRIMARY: '#4f4a4a',
+    FONT_COLOR_SECONDARY: '#000',
+    FONT_COLOR_TERTIARY: 'red',
+    
+    BACKGROUND_COLOR_PRIMARY: '#FFF',
+
+    PADDING_HORIZONTAL: 15,
+  };

@@ -5,7 +5,7 @@ import { theme } from '../../global/styles/theme';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: theme.BACKGROUND_COLOR_PRIMARY,
         alignItems: "center",
         justifyContent: "center",
     },
@@ -24,9 +24,9 @@ const styles = StyleSheet.create({
     },
     title: {
         paddingHorizontal: theme.PADDING_HORIZONTAL,
-        fontFamily: theme.FONT_BOLD,
+        fontFamily: theme.FONT_FAMILY_BOLD,
         fontSize: theme.FONT_SIZE_LARGE,
-        color: '#4f4a4a'
+        color: theme.FONT_COLOR_PRIMARY
     },
     scrollView: {
         paddingHorizontal: theme.PADDING_HORIZONTAL

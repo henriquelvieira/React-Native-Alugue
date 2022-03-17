@@ -23,13 +23,6 @@ const styles = StyleSheet.create({
         fontSize: theme.FONT_SIZE_SMALL,
         color: theme.FONT_COLOR_PRIMARY,
     },
-    star: {
-        color: "#E7A74e",
-        backgroundColor: 'transparent',
-        // textShadowColor: "#000",
-        // textShadowOffset: {width: .5, height: 1},
-        // textShadowRadius: 1,
-    },
     house: {
         fontFamily: theme.FONT_FAMILY_BOLD,
         fontSize: theme.FONT_SIZE_LARGE,

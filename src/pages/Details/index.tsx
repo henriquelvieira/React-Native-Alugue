@@ -1,11 +1,13 @@
 import React from "react";
 import { Text, View, Image, FlatList } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import { Ionicons } from '@expo/vector-icons';
-import Stars from "react-native-stars";
 import SwiperComponent from "../../components/SwiperComponent";
+import StartsComponent from "../../components/StartsComponent";
 
 import styles from './styles';
+
+interface IRenderImages {
+    cover: string;  
+};
 
 //TODO: Replaces SwiperComponent for yarn add react-native-swiper-flatlist
 
@@ -24,6 +26,7 @@ export default function Details({ route, navigation }){
 
     return (
         <View style={styles.container}> 
+            
             <View style={styles.swiperContent}> 
                 <SwiperComponent 
                     swipers={params.images}
@@ -38,14 +41,8 @@ export default function Details({ route, navigation }){
                 <View style={{ width: '35%' }}>
                     <Text style={styles.rating}>Avaliações</Text>   
                     <View style={{ alignItems: 'center', flexDirection: 'row'  }} >
-                        <Stars 
-                            default={params.rating ? params.rating : 4}
-                            count={5}
-                            half={true}
-                            starSize={20}
-                            fullStar={ <Ionicons name="md-star" size={24} style={styles.star} /> }
-                            emptyStar={ <Ionicons name="md-star-outline" size={24} style={styles.star} /> }
-                            halfStar={ <Ionicons name="md-star-half" size={24} style={styles.star} /> }
+                        <StartsComponent 
+                            rating={params.rating}
                         />
                     </View>                 
                 </View>
@@ -61,18 +58,14 @@ export default function Details({ route, navigation }){
                 <Text style={styles.description}>{params?.description}</Text>
             </View>
 
-            <ScrollView
+            <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 style={{paddingHorizontal: 15, marginTop: 35 }}
-            >
-                <FlatList
-                    horizontal
-                    data={params.images}
-                    renderItem={renderImages}
-                    keyExtractor={dataNew => dataNew.id}
-                />                     
-            </ScrollView>
+                data={params.images}
+                renderItem={renderImages}
+                keyExtractor={dataNew => dataNew.id}
+            />                     
 
         </View>
     );

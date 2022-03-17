@@ -57,64 +57,51 @@ export default function Home(){
     return (
         <ScrollView
             showsVerticalScrollIndicator={false}
-            style={{ backgroundColor: '#fff' }}
+            style={styles.container}
         >
 
-            <View style={styles.header}>
+            <View style={styles.search}>
                 <SearchBox placeholder="O que está procurando?"/>
             </View>
 
-            <View style={styles.contentNew}>
+            <View style={styles.content}>
                 <Text style={styles.title}>Novidades</Text>
             </View>
 
-            <ScrollView 
-                horizontal 
+            <FlatList
+                horizontal
                 showsHorizontalScrollIndicator={false} 
                 style={styles.scrollView}
-            >            
-                <FlatList
-                    horizontal
-                    data={DataNews}
-                    renderItem={renderNews}
-                    keyExtractor={dataNew => dataNew.id}
-                />                                                
-            </ScrollView>
+                data={DataNews}
+                renderItem={renderNews}
+                keyExtractor={dataNew => dataNew.id}
+            />                                                
 
-            <View style={[styles.contentNew, { marginBottom: 10, marginTop: 20 }]}>
+            <View style={[styles.content, styles.contentMargin]}>
                 <Text style={styles.title}>Próximo de você</Text>
             </View>
 
-            <ScrollView 
-                horizontal 
+            <FlatList
+                horizontal
                 showsHorizontalScrollIndicator={false} 
-                style={styles.scrollView} 
-            >
-                <FlatList
-                    horizontal
-                    data={DataHouses}
-                    renderItem={renderHouses}
-                    keyExtractor={dataNew => dataNew.id}
-                />  
-            </ScrollView>
+                style={styles.scrollView}                     
+                data={DataHouses}
+                renderItem={renderHouses}
+                keyExtractor={dataNew => dataNew.id}
+            />  
 
-            <View style={[styles.contentNew, { marginBottom: 10, marginTop: 20 }]}>
+            <View style={[styles.content, styles.contentMargin]}>
                 <Text style={styles.title}>Dica do Dia</Text>
             </View>
 
-            <ScrollView 
-                horizontal 
+            <FlatList
+                horizontal
                 showsHorizontalScrollIndicator={false} 
                 style={styles.scrollView} 
-            >            
-                <FlatList
-                    horizontal
-                    data={DataRecommended}
-                    renderItem={renderRecommendeds}
-                    keyExtractor={dataNew => dataNew.id}
-                />                                        
-            </ScrollView>
-
+                data={DataRecommended}
+                renderItem={renderRecommendeds}
+                keyExtractor={dataNew => dataNew.id}
+            />                                        
         </ScrollView>
     );
 };

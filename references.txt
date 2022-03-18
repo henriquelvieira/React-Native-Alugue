@@ -53,3 +53,6 @@ https://www.npmjs.com/package/react-native-swiper-flatlist
 https://stackoverflow.com/questions/67623952/error-virtualizedlists-should-never-be-nested-inside-plain-scrollviews-with-th
 
 https://github.com/hossein-zare/react-native-dropdown-picker/issues/56
+
+
+https://medium.com/jusbrasil-tech/conhecendo-a-stack-de-ci-cd-de-aplicativos-react-native-do-jusbrasil-1f622ea4df29

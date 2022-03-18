@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     imageSlide: {
         width: "100%",
         height: 400,
+        resizeMode: 'cover',
     }
 });
 

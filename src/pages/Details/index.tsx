@@ -27,11 +27,15 @@ export default function Details({ route, navigation }){
     return (
         <View style={styles.container}> 
             
-            <View style={styles.swiperContent}> 
-                <SwiperComponent 
-                    swipers={params.images}
-                />
-            </View>
+
+            {params.images.length > 0 && (
+                <View style={styles.swiperContent}> 
+                    <SwiperComponent 
+                        swipers={params.images}
+                    />
+                </View>
+                )
+            }
 
             <View style={styles.headerContent}> 
                 <View style={{ width: '65%' }}>

@@ -27,7 +27,6 @@ export default function Details({ route, navigation }){
     return (
         <View style={styles.container}> 
             
-
             {params.images.length > 0 && (
                 <View style={styles.swiperContent}> 
                     <SwiperComponent 

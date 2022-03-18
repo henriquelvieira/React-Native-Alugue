@@ -32,7 +32,7 @@ export default function Home(){
             description={item.description}
             price={item.price}
             onPress={() => handleNavigation('Details', item)} 
-        />      
+        />               
       );
 
       const renderHouses = ({ item }) => (
@@ -61,7 +61,7 @@ export default function Home(){
         >
 
             <View style={styles.search}>
-                <SearchBox placeholder="O que está procurando?"/>
+                <SearchBox placeholder="O que está procurando?" />
             </View>
 
             <View style={styles.content}>

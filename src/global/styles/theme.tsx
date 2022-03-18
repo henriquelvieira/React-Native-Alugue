@@ -15,4 +15,6 @@ export const theme = {
     BACKGROUND_COLOR_PRIMARY: '#FFF',
 
     PADDING_HORIZONTAL: 15,
+
+    BORDER_RADIUS: 8,
   };

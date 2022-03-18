@@ -57,13 +57,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: theme.BACKGROUND_COLOR_PRIMARY,
         height: 90,
-        borderRadius: 8,
+        borderRadius: theme.BORDER_RADIUS,
         marginRight: 20,
     },
     slideImage: {
         width: 90, 
         height: 90, 
-        borderRadius: 8
+        borderRadius: theme.BORDER_RADIUS
     }
     
 });

@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Image} from 'react-native';
 import Swiper from 'react-native-swiper';
-// import { SwiperFlatList } from 'react-native-swiper-flatlist';
 import styles from './styles';
 
 

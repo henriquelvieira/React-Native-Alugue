@@ -1,5 +1,7 @@
 import React from "react";
-import { Text, View, Image, FlatList } from "react-native";
+import { Text, View, Image, FlatList, SafeAreaView } from "react-native";
+// import ImageViewer from 'react-native-image-zoom-viewer';
+
 import SwiperComponent from "../../components/SwiperComponent";
 import StartsComponent from "../../components/StartsComponent";
 
@@ -9,7 +11,26 @@ interface IRenderImages {
     cover: string;  
 };
 
-//TODO: Replaces SwiperComponent for yarn add react-native-swiper-flatlist
+const images = [{
+    // Simplest usage.
+    url: 'https://developerplus.com.br/wp-content/uploads/2021/10/react_native_logo.png',
+ 
+    // width: number
+    // height: number
+    // Optional, if you know the image size, you can set the optimization performance
+ 
+    // You can pass props to <Image />.
+    props: {
+        // headers: ...
+    }
+}, {
+    url: '',
+    props: {
+        // Or you can set source directory.
+        source: require('../../assets/house1.jpg')
+    }
+}];
+
 
 export default function Details({ route, navigation }){
     
@@ -20,12 +41,13 @@ export default function Details({ route, navigation }){
             <Image 
                 source={item.cover}
                 style={styles.slideImage}
+
             />
         </View>  
       );
 
     return (
-        <View style={styles.container}> 
+        <SafeAreaView style={styles.container}> 
             
             {params.images.length > 0 && (
                 <View style={styles.swiperContent}> 
@@ -49,7 +71,6 @@ export default function Details({ route, navigation }){
                         />
                     </View>                 
                 </View>
-
             </View>
 
             <View style={styles.displayPrice}>
@@ -61,6 +82,14 @@ export default function Details({ route, navigation }){
                 <Text style={styles.description}>{params?.description}</Text>
             </View>
 
+            {/* <Modal 
+                visible={false} 
+                transparent={true}
+            >
+                <ImageViewer imageUrls={images} />
+            </Modal> */}
+
+            {/*PHOTO'S GALLERY */}
             <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -68,9 +97,9 @@ export default function Details({ route, navigation }){
                 data={params.images}
                 renderItem={renderImages}
                 keyExtractor={dataNew => dataNew.id}
-            />                     
+            />    
 
-        </View>
+        </SafeAreaView>
     );
 };
 

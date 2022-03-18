@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, FlatList } from "react-native";
+import { Text, View, FlatList, SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 
@@ -55,53 +55,56 @@ export default function Home(){
     
 
     return (
-        <ScrollView
-            showsVerticalScrollIndicator={false}
+        <SafeAreaView
             style={styles.container}
         >
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+            >
 
-            <View style={styles.search}>
-                <SearchBox placeholder="O que está procurando?" />
-            </View>
+                <View style={styles.search}>
+                    <SearchBox placeholder="O que está procurando?" />
+                </View>
 
-            <View style={styles.content}>
-                <Text style={styles.title}>Novidades</Text>
-            </View>
+                <View style={styles.content}>
+                    <Text style={styles.title}>Novidades</Text>
+                </View>
 
-            <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false} 
-                style={styles.scrollView}
-                data={DataNews}
-                renderItem={renderNews}
-                keyExtractor={dataNew => dataNew.id}
-            />                                                
+                <FlatList
+                    horizontal
+                    showsHorizontalScrollIndicator={false} 
+                    style={styles.scrollView}
+                    data={DataNews}
+                    renderItem={renderNews}
+                    keyExtractor={dataNew => dataNew.id}
+                />                                                
 
-            <View style={[styles.content, styles.contentMargin]}>
-                <Text style={styles.title}>Próximo de você</Text>
-            </View>
+                <View style={[styles.content, styles.contentMargin]}>
+                    <Text style={styles.title}>Próximo de você</Text>
+                </View>
 
-            <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false} 
-                style={styles.scrollView}                     
-                data={DataHouses}
-                renderItem={renderHouses}
-                keyExtractor={dataNew => dataNew.id}
-            />  
+                <FlatList
+                    horizontal
+                    showsHorizontalScrollIndicator={false} 
+                    style={styles.scrollView}                     
+                    data={DataHouses}
+                    renderItem={renderHouses}
+                    keyExtractor={dataNew => dataNew.id}
+                />  
 
-            <View style={[styles.content, styles.contentMargin]}>
-                <Text style={styles.title}>Dica do Dia</Text>
-            </View>
+                <View style={[styles.content, styles.contentMargin]}>
+                    <Text style={styles.title}>Dica do Dia</Text>
+                </View>
 
-            <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false} 
-                style={styles.scrollView} 
-                data={DataRecommended}
-                renderItem={renderRecommendeds}
-                keyExtractor={dataNew => dataNew.id}
-            />                                        
-        </ScrollView>
+                <FlatList
+                    horizontal
+                    showsHorizontalScrollIndicator={false} 
+                    style={styles.scrollView} 
+                    data={DataRecommended}
+                    renderItem={renderRecommendeds}
+                    keyExtractor={dataNew => dataNew.id}
+                />                                        
+            </ScrollView>
+        </SafeAreaView>
     );
 };

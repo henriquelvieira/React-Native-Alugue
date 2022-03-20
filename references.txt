@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 expo init my-app
 
 yarn add @react-navigation/native-stack 
@@ -55,4 +56,63 @@ https://stackoverflow.com/questions/67623952/error-virtualizedlists-should-never
 https://github.com/hossein-zare/react-native-dropdown-picker/issues/56
 
 
+=======
+expo init my-app
+
+yarn add @react-navigation/native-stack 
+
+yarn add @react-navigation/native
+
+yarn add react-native-screens react-native-safe-area-context
+
+yarn add @react-navigation/bottom-tabs
+
+expo install react-native-gesture-handler
+
+yarn add react-native-reanimated
+
+yarn add @react-native-community/masked-view
+
+yarn add expo-font
+
+yarn add react-native-stars react-native-swiper
+
+yarn add @expo-google-fonts/montserrat
+
+
+yarn add styled-components
+
+yarn add -d @types/styled-components-react-native
+
+yarn add axios
+
+yarn add @types/axios
+
+
+
+echo "# React-Native-Alugue" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/henriquelvieira/React-Native-Alugue.git
+git push -u origin main
+
+
+https://styled-components.com/docs/basics
+https://medium.com/swlh/interacting-with-restful-apis-using-typescript-react-hooks-and-axios-part-1-af52920ae3e4
+
+https://br.atsit.in/archives/29499
+
+https://stackoverflow.com/questions/51415892/import-swiper-show-error-by-using-react-native-swiper
+https://www.reactnative.guide/8-styling/8.1-theme-variables.html
+
+https://www.npmjs.com/package/react-native-swiper-flatlist
+
+https://stackoverflow.com/questions/67623952/error-virtualizedlists-should-never-be-nested-inside-plain-scrollviews-with-th
+
+https://github.com/hossein-zare/react-native-dropdown-picker/issues/56
+
+
+>>>>>>> main
 https://medium.com/jusbrasil-tech/conhecendo-a-stack-de-ci-cd-de-aplicativos-react-native-do-jusbrasil-1f622ea4df29

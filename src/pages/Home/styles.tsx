@@ -1,33 +1,37 @@
 import { StyleSheet } from "react-native";
+import { theme } from '../../global/styles/theme';
+
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: theme.BACKGROUND_COLOR_PRIMARY,
     },
-    header:{
+    search: {
         flexDirection: 'row',
-        paddingHorizontal: 15,
+        paddingHorizontal: theme.PADDING_HORIZONTAL,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
         marginVertical: 20  
     },
-    contentNew: {
+    content: {
         flexDirection: 'row',
         width: '100%',
         alignItems: 'center',
     },
+    contentMargin: {
+        marginBottom: 10, 
+        marginTop: 20 
+    },
     title: {
-        paddingHorizontal: 15,
-        fontFamily: 'Montserrat_700Bold',
-        fontSize: 18,
-        color: '#4f4a4a'
+        fontFamily: theme.FONT_FAMILY_BOLD,
+        fontSize: theme.FONT_SIZE_LARGE,
+        color: theme.FONT_COLOR_PRIMARY,
+        paddingHorizontal: theme.PADDING_HORIZONTAL,
     },
     scrollView: {
-        paddingHorizontal: 15
+        paddingHorizontal: theme.PADDING_HORIZONTAL
     }
 });
 

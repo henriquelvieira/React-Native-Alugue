@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import { theme } from '../../global/styles/theme';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFF"
+        backgroundColor: theme.BACKGROUND_COLOR_PRIMARY
     },
     swiperContent: {
         flexDirection: 'row',
@@ -18,42 +19,35 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     rating: {
-        fontFamily: 'Montserrat_700Bold',
-        fontSize: 9,
-        color: "#4f4a4a",
-    },
-    star: {
-        color: "#E7A74e",
-        backgroundColor: 'transparent',
-        // textShadowColor: "#000",
-        // textShadowOffset: {width: .5, height: 1},
-        // textShadowRadius: 1,
+        fontFamily: theme.FONT_FAMILY_BOLD,
+        fontSize: theme.FONT_SIZE_SMALL,
+        color: theme.FONT_COLOR_PRIMARY,
     },
     house: {
-        fontFamily: 'Montserrat_700Bold',
-        fontSize: 18,
-        color: "#4f4a4a",
+        fontFamily: theme.FONT_FAMILY_BOLD,
+        fontSize: theme.FONT_SIZE_LARGE,
+        color: theme.FONT_COLOR_PRIMARY,
     },
     displayPrice: {
         flexDirection: 'row',
         justifyContent: 'flex-start'
     },
     price: {
-        fontFamily: 'Montserrat_700Bold',
-        fontSize: 14,
+        fontFamily: theme.FONT_FAMILY_BOLD,
+        fontSize: theme.FONT_SIZE_MEDIUM,
         paddingHorizontal: 20,
-        color: '#000'
+        color: theme.FONT_COLOR_SECONDARY
     },
     offer: {
-        fontFamily: 'Montserrat_700Bold',
-        fontSize: 16,
+        fontFamily: theme.FONT_FAMILY_BOLD,
+        fontSize: theme.FONT_SIZE_MEDIUM,
         paddingHorizontal: 5,
         color: 'red'
     },
     description: {
-        fontFamily: 'Montserrat_500Medium',
-        fontSize: 14,
-        color: '#4f4a4a',
+        fontFamily: theme.FONT_FAMILY_MEDIUM,
+        fontSize: theme.FONT_SIZE_MEDIUM,
+        color: theme.FONT_COLOR_PRIMARY,
         paddingHorizontal: 20,
         lineHeight: 20,
         marginTop: 20,
@@ -61,15 +55,15 @@ const styles = StyleSheet.create({
     slide: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FFF',
+        backgroundColor: theme.BACKGROUND_COLOR_PRIMARY,
         height: 90,
-        borderRadius: 8,
+        borderRadius: theme.BORDER_RADIUS,
         marginRight: 20,
     },
     slideImage: {
         width: 90, 
         height: 90, 
-        borderRadius: 8
+        borderRadius: theme.BORDER_RADIUS
     }
     
 });

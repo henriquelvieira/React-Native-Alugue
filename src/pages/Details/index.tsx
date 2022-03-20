@@ -1,13 +1,36 @@
 import React from "react";
-import { Text, View, Image, FlatList } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import { Ionicons } from '@expo/vector-icons';
-import Stars from "react-native-stars";
+import { Text, View, Image, FlatList, SafeAreaView } from "react-native";
+// import ImageViewer from 'react-native-image-zoom-viewer';
+
 import SwiperComponent from "../../components/SwiperComponent";
+import StartsComponent from "../../components/StartsComponent";
 
 import styles from './styles';
 
-//TODO: Replaces SwiperComponent for yarn add react-native-swiper-flatlist
+interface IRenderImages {
+    cover: string;  
+};
+
+const images = [{
+    // Simplest usage.
+    url: 'https://developerplus.com.br/wp-content/uploads/2021/10/react_native_logo.png',
+ 
+    // width: number
+    // height: number
+    // Optional, if you know the image size, you can set the optimization performance
+ 
+    // You can pass props to <Image />.
+    props: {
+        // headers: ...
+    }
+}, {
+    url: '',
+    props: {
+        // Or you can set source directory.
+        source: require('../../assets/house1.jpg')
+    }
+}];
+
 
 export default function Details({ route, navigation }){
     
@@ -18,17 +41,22 @@ export default function Details({ route, navigation }){
             <Image 
                 source={item.cover}
                 style={styles.slideImage}
+
             />
         </View>  
       );
 
     return (
-        <View style={styles.container}> 
-            <View style={styles.swiperContent}> 
-                <SwiperComponent 
-                    swipers={params.images}
-                />
-            </View>
+        <SafeAreaView style={styles.container}> 
+            
+            {params.images.length > 0 && (
+                <View style={styles.swiperContent}> 
+                    <SwiperComponent 
+                        swipers={params.images}
+                    />
+                </View>
+                )
+            }
 
             <View style={styles.headerContent}> 
                 <View style={{ width: '65%' }}>
@@ -38,43 +66,40 @@ export default function Details({ route, navigation }){
                 <View style={{ width: '35%' }}>
                     <Text style={styles.rating}>Avaliações</Text>   
                     <View style={{ alignItems: 'center', flexDirection: 'row'  }} >
-                        <Stars 
-                            default={params.rating ? params.rating : 4}
-                            count={5}
-                            half={true}
-                            starSize={20}
-                            fullStar={ <Ionicons name="md-star" size={24} style={styles.star} /> }
-                            emptyStar={ <Ionicons name="md-star-outline" size={24} style={styles.star} /> }
-                            halfStar={ <Ionicons name="md-star-half" size={24} style={styles.star} /> }
+                        <StartsComponent 
+                            rating={params.rating}
                         />
                     </View>                 
                 </View>
-
             </View>
 
             <View style={styles.displayPrice}>
-                <Text style={styles.price}>{params.price}</Text>
-                {params.offer && (<Text style={styles.offer}>{params.offer}</Text>)}
+                <Text style={styles.price}>{params?.price}</Text>
+                <Text style={styles.offer}>{params?.offer}</Text>
             </View>
 
             <View>
-                <Text style={styles.description}>{params.description}</Text>
+                <Text style={styles.description}>{params?.description}</Text>
             </View>
 
-            <ScrollView
+            {/* <Modal 
+                visible={false} 
+                transparent={true}
+            >
+                <ImageViewer imageUrls={images} />
+            </Modal> */}
+
+            {/*PHOTO'S GALLERY */}
+            <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 style={{paddingHorizontal: 15, marginTop: 35 }}
-            >
-                <FlatList
-                    horizontal
-                    data={params.images}
-                    renderItem={renderImages}
-                    keyExtractor={dataNew => dataNew.id}
-                />                     
-            </ScrollView>
+                data={params.images}
+                renderItem={renderImages}
+                keyExtractor={dataNew => dataNew.id}
+            />    
 
-        </View>
+        </SafeAreaView>
     );
 };
 

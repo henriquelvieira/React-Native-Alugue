@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { theme } from '../../global/styles/theme';
 
 const styles = StyleSheet.create({
     wrapper: {
@@ -15,11 +16,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FFF'
+        backgroundColor: theme.BACKGROUND_COLOR_PRIMARY
     },
     imageSlide: {
         width: "100%",
         height: 400,
+        resizeMode: 'cover',
     }
 });
 

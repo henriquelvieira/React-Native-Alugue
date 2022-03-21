@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, ImageBackground, TouchableOpacity} from 'react-native';
+import { Text, ImageBackground, TouchableOpacity, ImageSourcePropType } from 'react-native';
 import styles from './styles';
 
 export interface IRecommended {
-    cover: string;
+    id: string;
+    cover: ImageSourcePropType;
     name: string;
     offer: string;
     onPress: () => void;

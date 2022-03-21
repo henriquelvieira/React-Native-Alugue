@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, TouchableOpacity, Image, Text } from 'react-native';
+import { View, TouchableOpacity, Image, Text, ImageSourcePropType } from 'react-native';
 import styles from './styles';
 
 export interface IPopulares {
-  cover: string;
+  id: string;
+  cover: ImageSourcePropType;
   name: string;
   description: string;
   price: string;
@@ -26,7 +27,7 @@ export default function Populares (props: IPopulares) {
             <Text style={styles.description}>{props?.description}</Text>
             <Text style={styles.price}>{props?.price}</Text>
         </View>
-        
+
     </TouchableOpacity>
 
   );

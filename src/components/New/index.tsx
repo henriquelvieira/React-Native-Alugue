@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity} from 'react-native';
+import { View, Text, Image, TouchableOpacity, ImageSourcePropType } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
 
 export interface INew {
-    cover: string;
+    id: string;
+    cover: ImageSourcePropType;
     name: string;
     description: string;
     price: string;
@@ -28,10 +29,10 @@ export default function New (props: INew) {
             <Text style={styles.description}>{props.description}</Text>
 
             <View style={styles.footer}>
-                <View style={{width: '80%'}}>
+                <View style={{width: '80%'}} >
                     <Text style={styles.price}>{props.price}</Text>
                 </View>
-                <View style={{width: '20%'}}>
+                <View style={{width: '20%'}} >
                     <Ionicons name="ios-add-circle" size={24} color="black" />
                 </View>
             </View>

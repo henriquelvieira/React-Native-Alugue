@@ -11,7 +11,7 @@ import Recommended, { IRecommended } from '../../components/Recommended';
 import Populares, { IPopulares } from '../../components/Populares';
 
 
-import { DataNews, DataHouses, DataRecommended, DataPopulares, IData } from './data';
+import { DataNews, DataHouses, DataRecommended, DataPopulares } from './data';
 
 
 export interface IParamsNavigation {
@@ -29,6 +29,7 @@ export default function Home(){
 
     const renderNews = ({ item }: {item: INew} ) => (
         <New 
+            id={item.id}
             cover={item.cover}
             name={item.name}
             description={item.description}
@@ -39,6 +40,7 @@ export default function Home(){
 
       const renderHouses = ({ item }: { item: IHouse } ) => (
         <House 
+            id={item.id}    
             cover={item.cover}
             description={item.description}
             price={item.price}
@@ -48,6 +50,7 @@ export default function Home(){
       
       const renderRecommendeds = ( { item }: { item: IRecommended } ) => (
         <Recommended
+            id={item.id}
             cover={item.cover}
             name={item.name}
             offer={item.offer}
@@ -58,6 +61,7 @@ export default function Home(){
 
       const renderPopulares = ( { item }: { item: IPopulares } ) => (
         <Populares
+            id={item.id}
             cover={item.cover}
             name={item.name}
             description={item.description}
@@ -82,8 +86,6 @@ export default function Home(){
                 <View style={styles.content}>
                     <Text style={styles.title}>Novidades</Text>
                 </View>
-
-                <Text>{DataNews}</Text>
 
                 <FlatList
                     horizontal

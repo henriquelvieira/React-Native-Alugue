@@ -12,7 +12,7 @@ export interface IData {
 interface IImages {
     id: string;
     cover: string;    
-}  
+};
 
 export const DataNews: IData[] = [
     {

@@ -51,9 +51,7 @@ export default function Details({ route, navigation }){
             
             {params.images.length > 0 && (
                 <View style={styles.swiperContent}> 
-                    <SwiperComponent 
-                        swipers={params.images}
-                    />
+                    <SwiperComponent swipers={params.images} />
                 </View>
                 )
             }
@@ -66,9 +64,7 @@ export default function Details({ route, navigation }){
                 <View style={{ width: '35%' }}>
                     <Text style={styles.rating}>Avaliações</Text>   
                     <View style={{ alignItems: 'center', flexDirection: 'row'  }} >
-                        <StartsComponent 
-                            rating={params.rating}
-                        />
+                        <StartsComponent rating={params.rating} />
                     </View>                 
                 </View>
             </View>
@@ -102,4 +98,6 @@ export default function Details({ route, navigation }){
         </SafeAreaView>
     );
 };
+
+
 

@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Details from './pages/Details';
 import ButtonHeader from './components/ButtonHeader';
 
+import { theme } from './global/styles/theme';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +18,7 @@ function Routes(){
             title: title,
             headerTitleAlign: align,
             headerTitleStyle: {
-                fontFamily: 'Montserrat_700Bold',
+                fontFamily: theme.FONT_FAMILY_BOLD,
                 // fontSize: 18,
                 // color: '#fff'
             },

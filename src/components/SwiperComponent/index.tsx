@@ -16,10 +16,11 @@ export default function SwiperComponent (props) {
             autoplayTimeout={5}
         >
             {props.swipers.map((item) => (
-                <View style={styles.slide}>
+                <View style={styles.slide} key={`view_${item.id}`}>
                     <Image 
                         source={item.cover}
                         style={styles.imageSlide}
+                        key={`Image_${item.id}`}
                     />
                 </View>
             ))}

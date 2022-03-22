@@ -35,6 +35,7 @@ export default function Home(){
             description={item.description}
             price={item.price}
             onPress={() => handleNavigation('Details', item)} 
+            key={`New_${item.id}`}
         />               
       );
 
@@ -45,6 +46,7 @@ export default function Home(){
             description={item.description}
             price={item.price}
             onPress={() => handleNavigation('Details', item)} 
+            key={`House_${item.id}`}
         /> 
       ); 
       
@@ -55,6 +57,7 @@ export default function Home(){
             name={item.name}
             offer={item.offer}
             onPress={() => handleNavigation('Details', item)}
+            key={`Recommended_${item.id}`}
         />  
       );
     
@@ -66,6 +69,7 @@ export default function Home(){
             name={item.name}
             description={item.description}
             price={item.price}
+            key={`Populares_${item.id}`}
             onPress={() => handleNavigation('Details', item)}
         />  
       );
@@ -133,7 +137,6 @@ export default function Home(){
                     renderItem={renderPopulares}
                     keyExtractor={dataNew => dataNew.id}
                 />     
-
 
             </ScrollView>
         </SafeAreaView>
